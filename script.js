@@ -23,13 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
   html.setAttribute('data-theme', savedTheme);
 
+ if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     const current = html.getAttribute('data-theme');
     const next    = current === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem(THEME_KEY, next);
   });
-
+}
 
   // ============================================================
   // 2. TYPING ANIMATION — Hero role text
