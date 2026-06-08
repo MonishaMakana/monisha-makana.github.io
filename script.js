@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   // 2. TYPING ANIMATION — Hero role text
   // ============================================================
-  const typedEl  = document.getElementById('typedText');
+const typedEl  = document.getElementById('typedText');
+if (!typedEl) return;
   const phrases  = [
     'intelligent AI models',
     'full-stack web apps',
@@ -151,15 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   const hamburger  = document.getElementById('hamburger');
   const navLinksEl = document.getElementById('navLinks');
-
+if (hamburger && navLinksEl) {
   hamburger.addEventListener('click', () => {
     const isOpen = navLinksEl.classList.toggle('open');
     hamburger.classList.toggle('open', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
-    // Prevent body scroll when menu is open
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-
+}
   // Close menu on nav link click
   navLinksEl.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
