@@ -36,7 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. TYPING ANIMATION — Hero role text
   // ============================================================
 const typedEl  = document.getElementById('typedText');
-if (!typedEl) return;
+if (typedEl) {
+  setTimeout(typeLoop, 1200);
+}
   const phrases  = [
     'intelligent AI models',
     'full-stack web apps',
